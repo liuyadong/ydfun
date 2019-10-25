@@ -13,6 +13,8 @@ LinkingTo:
     Rcpp,
     RcppArmadillo
 Imports: 
-    Rcpp
+    Rcpp,
+    stars,
+    magrittr
 URL: https://github.com/liuyadong/ydfun
 BugReports: https://github.com/liuyadong/ydfun/issues
