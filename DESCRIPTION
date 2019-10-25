@@ -14,3 +14,5 @@ LinkingTo:
     RcppArmadillo
 Imports: 
     Rcpp
+URL: https://github.com/liuyadong/ydfun
+BugReports: https://github.com/liuyadong/ydfun/issues
