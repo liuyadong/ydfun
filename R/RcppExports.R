@@ -17,7 +17,7 @@
 #' @return A matirx of \code{stat}.
 #' @export
 focal_stat_2d <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE, stat = "xmn") {
-    .Call('_ydfun_focal_stat_2d', PACKAGE = 'ydfun', x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)
+    .Call(`_ydfun_focal_stat_2d`, x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)
 }
 
 #' Focal statistics on temporal window
@@ -30,6 +30,16 @@ focal_stat_2d <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = 
 #' @return A matrix of \code{stat}.
 #' @export
 focal_stat_3d <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {
-    .Call('_ydfun_focal_stat_3d', PACKAGE = 'ydfun', x, y, fuzzy, xmin, xmax, ymin, ymax, stat)
+    .Call(`_ydfun_focal_stat_3d`, x, y, fuzzy, xmin, xmax, ymin, ymax, stat)
+}
+
+#' Gaussian kernel
+#'
+#' @param ksize Side length of the squared kernel.
+#' @param sigma Standard deviation of Gaussian weighting function.
+#' @return A squared matrix sum to 1.
+#'
+kernel_gauss <- function(ksize, sigma) {
+    .Call(`_ydfun_kernel_gauss`, ksize, sigma)
 }
 

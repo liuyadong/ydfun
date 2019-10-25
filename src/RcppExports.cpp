@@ -44,10 +44,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// kernel_gauss
+arma::mat kernel_gauss(int ksize, double sigma);
+RcppExport SEXP _ydfun_kernel_gauss(SEXP ksizeSEXP, SEXP sigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type ksize(ksizeSEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(kernel_gauss(ksize, sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ydfun_focal_stat_2d", (DL_FUNC) &_ydfun_focal_stat_2d, 10},
     {"_ydfun_focal_stat_3d", (DL_FUNC) &_ydfun_focal_stat_3d, 8},
+    {"_ydfun_kernel_gauss", (DL_FUNC) &_ydfun_kernel_gauss, 2},
     {NULL, NULL, 0}
 };
 
