@@ -1,6 +1,6 @@
 Package: ydfun
 Title: Miscellaneous Functions by 'Yadong Liu'
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Yadong", "Liu", role = c("aut", "cre"), email = "liuyadong828@gmail.com")
 Description: This package contains several miscellaneous functions I used in my study.
