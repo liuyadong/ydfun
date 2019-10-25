@@ -1,0 +1,25 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ydfun
+
+This package contains several miscellaneous functions I used in my study.
+
+## Installation
+
+You can install the package from github with:
+
+``` r
+##install.package('remotes')
+remotes::install_github("liuyadong/ydfun")
+```
