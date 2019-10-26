@@ -15,8 +15,8 @@ kernel_gauss <- function(ksize, sigma) {
 #' Focal mean with a given kernel
 #'
 #' @param x A matrix.
-#' @param kernel A kernel which can be produced by \code{\link{kernel_gauss}}.
-#' @param global Are data at global scale? If \code{TRUE}, both vertical
+#' @param kernel A kernel which can be produced by [kernel_gauss]
+#' @param global Are data at global scale? If `TRUE`, both vertical
 #' borders will be padded.
 #' @return A matrix of focal mean.
 #' @export
@@ -29,15 +29,15 @@ focal_mean <- function(x, kernel, global) {
 #' @param x A matrix.
 #' @param y The other matrix.
 #' @param fuzzy Fuzzify or not prior to calculation.
-#' @param xmin Lower limit of \code{x}. Defaults to \code{min(x)}.
-#' @param xmax Upper limit of \code{x}. Defaults to \code{max(x)}.
-#' @param ymin Lower limit of \code{y}. Defaults to \code{min(y)}.
-#' @param ymax Upper limit of \code{y}. Defaults to \code{max(y)}.
+#' @param xmin Lower limit of `x`. Defaults to `min(x).
+#' @param xmax Upper limit of `x`. Defaults to `max(x)`.
+#' @param ymin Lower limit of `y`. Defaults to `min(y).
+#' @param ymax Upper limit of `y`. Defaults to `max(y).
 #' @param ksize Side length of the spatial window.
-#' @param global Are data at global scale? If \code{TRUE}, both vertical
+#' @param global Are data at global scale? If `TRUE`, both vertical
 #' borders will be padded.
-#' @param stat Statistic to return. One of \code{c('xmn', 'ymn', 'xsd', 'ysd')}.
-#' @return A matirx of \code{stat}.
+#' @param stat Statistic to return. One of `c('xmn', 'ymn', 'xsd', 'ysd')`.
+#' @return A matirx.
 #' @export
 focal_stat_sw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE, stat = "xmn") {
     .Call(`_ydfun_focal_stat_sw`, x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)

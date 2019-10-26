@@ -27,8 +27,8 @@ arma::mat kernel_gauss(int ksize, double sigma){
 //' Focal mean with a given kernel
 //'
 //' @param x A matrix.
-//' @param kernel A kernel which can be produced by \code{\link{kernel_gauss}}.
-//' @param global Are data at global scale? If \code{TRUE}, both vertical
+//' @param kernel A kernel which can be produced by [kernel_gauss]
+//' @param global Are data at global scale? If `TRUE`, both vertical
 //' borders will be padded.
 //' @return A matrix of focal mean.
 //' @export

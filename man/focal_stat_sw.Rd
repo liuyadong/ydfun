@@ -15,13 +15,13 @@ focal_stat_sw(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_,
 
 \item{fuzzy}{Fuzzify or not prior to calculation.}
 
-\item{xmin}{Lower limit of \code{x}. Defaults to \code{min(x)}.}
+\item{xmin}{Lower limit of \code{x}. Defaults to `min(x).}
 
 \item{xmax}{Upper limit of \code{x}. Defaults to \code{max(x)}.}
 
-\item{ymin}{Lower limit of \code{y}. Defaults to \code{min(y)}.}
+\item{ymin}{Lower limit of \code{y}. Defaults to `min(y).}
 
-\item{ymax}{Upper limit of \code{y}. Defaults to \code{max(y)}.}
+\item{ymax}{Upper limit of \code{y}. Defaults to `max(y).}
 
 \item{ksize}{Side length of the spatial window.}
 
@@ -31,7 +31,7 @@ borders will be padded.}
 \item{stat}{Statistic to return. One of \code{c('xmn', 'ymn', 'xsd', 'ysd')}.}
 }
 \value{
-A matirx of \code{stat}.
+A matirx.
 }
 \description{
 Focal statistics on spatial window

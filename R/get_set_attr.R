@@ -1,13 +1,13 @@
 #' get and set attribute of stars object
 #'
-#' \code{get_attr} retrieves an attribute from stars, and rearranges to wide-form.
-#' \code{set_attr}, on the contrary, puts a wide-form matrix to stars as an attribute.
+#' `get_attr` retrieves an attribute from stars, and rearranges to wide-form.
+#' `set_attr`, on the contrary, puts a wide-form matrix to stars as an attribute.
 #' @name get_set_attr
-#' @param x object of class \code{stars}
+#' @param x object of class `stars`
 #' @param attr charter indicating attribute
 #' @importFrom stars st_dimensions
 #' @importFrom magrittr %>%
-#' @return \code{get_attr} returns a wide-from matrix
+#' @return `get_attr` returns a wide-from matrix
 #' @export
 #' @examples
 #' library(stars)
@@ -34,7 +34,7 @@ get_attr <- function(x, attr) {
 
 #' @name get_set_attr
 #' @param ar_wide a wide-from matrix
-#' @return \code{set_attr} returns a stars object
+#' @return `set_attr` returns a stars object
 #' @export
 set_attr <- function(x, attr, ar_wide) {
   attr(dim(ar_wide), 'names') <- NULL

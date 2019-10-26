@@ -9,7 +9,7 @@ focal_mean(x, kernel, global)
 \arguments{
 \item{x}{A matrix.}
 
-\item{kernel}{A kernel which can be produced by \code{\link{kernel_gauss}}.}
+\item{kernel}{A kernel which can be produced by \link{kernel_gauss}}
 
 \item{global}{Are data at global scale? If \code{TRUE}, both vertical
 borders will be padded.}

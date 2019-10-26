@@ -9,15 +9,15 @@ using namespace arma;
 //' @param x A matrix.
 //' @param y The other matrix.
 //' @param fuzzy Fuzzify or not prior to calculation.
-//' @param xmin Lower limit of \code{x}. Defaults to \code{min(x)}.
-//' @param xmax Upper limit of \code{x}. Defaults to \code{max(x)}.
-//' @param ymin Lower limit of \code{y}. Defaults to \code{min(y)}.
-//' @param ymax Upper limit of \code{y}. Defaults to \code{max(y)}.
+//' @param xmin Lower limit of `x`. Defaults to `min(x).
+//' @param xmax Upper limit of `x`. Defaults to `max(x)`.
+//' @param ymin Lower limit of `y`. Defaults to `min(y).
+//' @param ymax Upper limit of `y`. Defaults to `max(y).
 //' @param ksize Side length of the spatial window.
-//' @param global Are data at global scale? If \code{TRUE}, both vertical
+//' @param global Are data at global scale? If `TRUE`, both vertical
 //' borders will be padded.
-//' @param stat Statistic to return. One of \code{c('xmn', 'ymn', 'xsd', 'ysd')}.
-//' @return A matirx of \code{stat}.
+//' @param stat Statistic to return. One of `c('xmn', 'ymn', 'xsd', 'ysd')`.
+//' @return A matirx.
 //' @export
 // [[Rcpp::export]]
 arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool fuzzy,
