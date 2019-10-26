@@ -39,20 +39,20 @@ focal_mean <- function(x, kernel, global) {
 #' @param stat Statistic to return. One of \code{c('xmn', 'ymn', 'xsd', 'ysd')}.
 #' @return A matirx of \code{stat}.
 #' @export
-focal_stat_2d <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE, stat = "xmn") {
-    .Call(`_ydfun_focal_stat_2d`, x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)
+focal_stat_sw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE, stat = "xmn") {
+    .Call(`_ydfun_focal_stat_sw`, x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)
 }
 
 #' Focal statistics on temporal window
 #'
 #' This function computes the GCSM at each cell treating the 3rd dimension
 #' as a temporal window.
-#' @inheritParams focal_stat_2d
+#' @inheritParams focal_stat_sw
 #' @param x A 3d array. The 3rd one is time.
 #' @param y The other array.
 #' @return A matrix of \code{stat}.
 #' @export
-focal_stat_3d <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {
-    .Call(`_ydfun_focal_stat_3d`, x, y, fuzzy, xmin, xmax, ymin, ymax, stat)
+focal_stat_tw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {
+    .Call(`_ydfun_focal_stat_tw`, x, y, fuzzy, xmin, xmax, ymin, ymax, stat)
 }
 

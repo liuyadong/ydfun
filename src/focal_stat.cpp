@@ -20,7 +20,7 @@ using namespace arma;
 //' @return A matirx of \code{stat}.
 //' @export
 // [[Rcpp::export]]
-arma::mat focal_stat_2d(arma::mat x, arma::mat y, bool fuzzy,
+arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool fuzzy,
                         double xmin = NA_REAL, double xmax = NA_REAL,
                         double ymin = NA_REAL, double ymax = NA_REAL,
                         double ksize = 9, bool global = false,
@@ -98,13 +98,13 @@ arma::mat focal_stat_2d(arma::mat x, arma::mat y, bool fuzzy,
 //'
 //' This function computes the GCSM at each cell treating the 3rd dimension
 //' as a temporal window.
-//' @inheritParams focal_stat_2d
+//' @inheritParams focal_stat_sw
 //' @param x A 3d array. The 3rd one is time.
 //' @param y The other array.
 //' @return A matrix of \code{stat}.
 //' @export
 // [[Rcpp::export]]
-arma::mat focal_stat_3d(arma::cube x, arma::cube y, bool fuzzy,
+arma::mat focal_stat_tw(arma::cube x, arma::cube y, bool fuzzy,
                         double xmin = NA_REAL, double xmax = NA_REAL,
                         double ymin = NA_REAL, double ymax = NA_REAL,
                         Rcpp::String stat = "xmn"){

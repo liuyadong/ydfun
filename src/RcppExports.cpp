@@ -31,9 +31,9 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// focal_stat_2d
-arma::mat focal_stat_2d(arma::mat x, arma::mat y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, double ksize, bool global, Rcpp::String stat);
-RcppExport SEXP _ydfun_focal_stat_2d(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP ksizeSEXP, SEXP globalSEXP, SEXP statSEXP) {
+// focal_stat_sw
+arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, double ksize, bool global, Rcpp::String stat);
+RcppExport SEXP _ydfun_focal_stat_sw(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP ksizeSEXP, SEXP globalSEXP, SEXP statSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -47,13 +47,13 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type ksize(ksizeSEXP);
     Rcpp::traits::input_parameter< bool >::type global(globalSEXP);
     Rcpp::traits::input_parameter< Rcpp::String >::type stat(statSEXP);
-    rcpp_result_gen = Rcpp::wrap(focal_stat_2d(x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat));
+    rcpp_result_gen = Rcpp::wrap(focal_stat_sw(x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat));
     return rcpp_result_gen;
 END_RCPP
 }
-// focal_stat_3d
-arma::mat focal_stat_3d(arma::cube x, arma::cube y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, Rcpp::String stat);
-RcppExport SEXP _ydfun_focal_stat_3d(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP statSEXP) {
+// focal_stat_tw
+arma::mat focal_stat_tw(arma::cube x, arma::cube y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, Rcpp::String stat);
+RcppExport SEXP _ydfun_focal_stat_tw(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP statSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -65,7 +65,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
     Rcpp::traits::input_parameter< Rcpp::String >::type stat(statSEXP);
-    rcpp_result_gen = Rcpp::wrap(focal_stat_3d(x, y, fuzzy, xmin, xmax, ymin, ymax, stat));
+    rcpp_result_gen = Rcpp::wrap(focal_stat_tw(x, y, fuzzy, xmin, xmax, ymin, ymax, stat));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -73,8 +73,8 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_ydfun_kernel_gauss", (DL_FUNC) &_ydfun_kernel_gauss, 2},
     {"_ydfun_focal_mean", (DL_FUNC) &_ydfun_focal_mean, 3},
-    {"_ydfun_focal_stat_2d", (DL_FUNC) &_ydfun_focal_stat_2d, 10},
-    {"_ydfun_focal_stat_3d", (DL_FUNC) &_ydfun_focal_stat_3d, 8},
+    {"_ydfun_focal_stat_sw", (DL_FUNC) &_ydfun_focal_stat_sw, 10},
+    {"_ydfun_focal_stat_tw", (DL_FUNC) &_ydfun_focal_stat_tw, 8},
     {NULL, NULL, 0}
 };
 
