@@ -15,20 +15,15 @@ focal_stat_sw(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_,
 
 \item{fuzzy}{Fuzzify or not prior to calculation.}
 
-\item{xmin}{Lower limit of \code{x}. Defaults to `min(x).}
-
-\item{xmax}{Upper limit of \code{x}. Defaults to \code{max(x)}.}
-
-\item{ymin}{Lower limit of \code{y}. Defaults to `min(y).}
-
-\item{ymax}{Upper limit of \code{y}. Defaults to `max(y).}
+\item{xmin, xmax, ymin, ymax}{Parameters that determine fuzzy sets.
+If \code{NA_real_}, the default, will be set as extrema of data.}
 
 \item{ksize}{Side length of the spatial window.}
 
 \item{global}{Are data at global scale? If \code{TRUE}, both vertical
 borders will be padded.}
 
-\item{stat}{Statistic to return. One of \code{c('xmn', 'ymn', 'xsd', 'ysd')}.}
+\item{stat}{Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.}
 }
 \value{
 A matirx.

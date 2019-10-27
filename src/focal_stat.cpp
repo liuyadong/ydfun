@@ -9,14 +9,12 @@ using namespace arma;
 //' @param x A matrix.
 //' @param y The other matrix.
 //' @param fuzzy Fuzzify or not prior to calculation.
-//' @param xmin Lower limit of `x`. Defaults to `min(x).
-//' @param xmax Upper limit of `x`. Defaults to `max(x)`.
-//' @param ymin Lower limit of `y`. Defaults to `min(y).
-//' @param ymax Upper limit of `y`. Defaults to `max(y).
+//' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
+//' If `NA_real_`, the default, will be set as extrema of data.
 //' @param ksize Side length of the spatial window.
 //' @param global Are data at global scale? If `TRUE`, both vertical
 //' borders will be padded.
-//' @param stat Statistic to return. One of `c('xmn', 'ymn', 'xsd', 'ysd')`.
+//' @param stat Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.
 //' @return A matirx.
 //' @export
 // [[Rcpp::export]]
@@ -99,9 +97,11 @@ arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool fuzzy,
 //' This function computes the GCSM at each cell treating the 3rd dimension
 //' as a temporal window.
 //' @inheritParams focal_stat_sw
+//' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
+//' If `NA_real_`, the default, will be set as extrema of data.
 //' @param x A 3d array. The 3rd one is time.
 //' @param y The other array.
-//' @return A matrix of \code{stat}.
+//' @return A matrix.
 //' @export
 // [[Rcpp::export]]
 arma::mat focal_stat_tw(arma::cube x, arma::cube y, bool fuzzy,
