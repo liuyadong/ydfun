@@ -4,14 +4,14 @@
 \alias{focal_mean}
 \title{Focal mean with a given kernel}
 \usage{
-focal_mean(x, kernel, global)
+focal_mean(x, kernel, globe)
 }
 \arguments{
 \item{x}{A matrix.}
 
 \item{kernel}{A kernel which can be produced by \link{kernel_gauss}}
 
-\item{global}{Are data at global scale? If \code{TRUE}, both vertical
+\item{globe}{Are data at globe scale? If \code{TRUE}, both vertical
 borders will be padded.}
 }
 \value{

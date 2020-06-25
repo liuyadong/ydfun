@@ -4,23 +4,32 @@
 \alias{focal_stat_sw}
 \title{Focal statistics on spatial window}
 \usage{
-focal_stat_sw(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_,
-  ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE,
-  stat = "xmn")
+focal_stat_sw(
+  x,
+  y,
+  rescale = FALSE,
+  xmin = NA_real_,
+  xmax = NA_real_,
+  ymin = NA_real_,
+  ymax = NA_real_,
+  ksize = 9,
+  globe = FALSE,
+  stat = "xmn"
+)
 }
 \arguments{
 \item{x}{A matrix.}
 
 \item{y}{The other matrix.}
 
-\item{fuzzy}{Fuzzify or not prior to calculation.}
+\item{rescale}{Rescale or just clamp before computation.}
 
-\item{xmin, xmax, ymin, ymax}{Parameters that determine fuzzy sets.
+\item{xmin, xmax, ymin, ymax}{Rescale or clamp parameters.
 If \code{NA_real_}, the default, will be set as extrema of data.}
 
 \item{ksize}{Side length of the spatial window.}
 
-\item{global}{Are data at global scale? If \code{TRUE}, both vertical
+\item{globe}{Are data at the global scale? If \code{TRUE}, both vertical
 borders will be padded.}
 
 \item{stat}{Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.}

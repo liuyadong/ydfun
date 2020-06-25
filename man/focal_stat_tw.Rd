@@ -4,15 +4,23 @@
 \alias{focal_stat_tw}
 \title{Focal statistics on temporal window}
 \usage{
-focal_stat_tw(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_,
-  ymin = NA_real_, ymax = NA_real_, stat = "xmn")
+focal_stat_tw(
+  xxx,
+  yyy,
+  rescale = FALSE,
+  xmin = NA_real_,
+  xmax = NA_real_,
+  ymin = NA_real_,
+  ymax = NA_real_,
+  stat = "xmn"
+)
 }
 \arguments{
-\item{x}{A 3d array. The 3rd one is time.}
+\item{xxx}{A 3d array. The 3rd one is time.}
 
-\item{y}{The other array.}
+\item{yyy}{The other array.}
 
-\item{fuzzy}{Fuzzify or not prior to calculation.}
+\item{rescale}{Rescale or just clamp before computation.}
 
 \item{xmin, xmax, ymin, ymax}{Parameters that determine fuzzy sets.
 If \code{NA_real_}, the default, will be set as extrema of data.}

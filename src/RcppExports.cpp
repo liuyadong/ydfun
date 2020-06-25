@@ -19,53 +19,53 @@ BEGIN_RCPP
 END_RCPP
 }
 // focal_mean
-arma::mat focal_mean(arma::mat x, arma::mat kernel, bool global);
-RcppExport SEXP _ydfun_focal_mean(SEXP xSEXP, SEXP kernelSEXP, SEXP globalSEXP) {
+arma::mat focal_mean(arma::mat x, arma::mat kernel, bool globe);
+RcppExport SEXP _ydfun_focal_mean(SEXP xSEXP, SEXP kernelSEXP, SEXP globeSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type kernel(kernelSEXP);
-    Rcpp::traits::input_parameter< bool >::type global(globalSEXP);
-    rcpp_result_gen = Rcpp::wrap(focal_mean(x, kernel, global));
+    Rcpp::traits::input_parameter< bool >::type globe(globeSEXP);
+    rcpp_result_gen = Rcpp::wrap(focal_mean(x, kernel, globe));
     return rcpp_result_gen;
 END_RCPP
 }
 // focal_stat_sw
-arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, double ksize, bool global, Rcpp::String stat);
-RcppExport SEXP _ydfun_focal_stat_sw(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP ksizeSEXP, SEXP globalSEXP, SEXP statSEXP) {
+arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool rescale, double xmin, double xmax, double ymin, double ymax, double ksize, bool globe, std::string stat);
+RcppExport SEXP _ydfun_focal_stat_sw(SEXP xSEXP, SEXP ySEXP, SEXP rescaleSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP ksizeSEXP, SEXP globeSEXP, SEXP statSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type y(ySEXP);
-    Rcpp::traits::input_parameter< bool >::type fuzzy(fuzzySEXP);
+    Rcpp::traits::input_parameter< bool >::type rescale(rescaleSEXP);
     Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
     Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
     Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
     Rcpp::traits::input_parameter< double >::type ksize(ksizeSEXP);
-    Rcpp::traits::input_parameter< bool >::type global(globalSEXP);
-    Rcpp::traits::input_parameter< Rcpp::String >::type stat(statSEXP);
-    rcpp_result_gen = Rcpp::wrap(focal_stat_sw(x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat));
+    Rcpp::traits::input_parameter< bool >::type globe(globeSEXP);
+    Rcpp::traits::input_parameter< std::string >::type stat(statSEXP);
+    rcpp_result_gen = Rcpp::wrap(focal_stat_sw(x, y, rescale, xmin, xmax, ymin, ymax, ksize, globe, stat));
     return rcpp_result_gen;
 END_RCPP
 }
 // focal_stat_tw
-arma::mat focal_stat_tw(arma::cube x, arma::cube y, bool fuzzy, double xmin, double xmax, double ymin, double ymax, Rcpp::String stat);
-RcppExport SEXP _ydfun_focal_stat_tw(SEXP xSEXP, SEXP ySEXP, SEXP fuzzySEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP statSEXP) {
+arma::mat focal_stat_tw(arma::cube xxx, arma::cube yyy, bool rescale, double xmin, double xmax, double ymin, double ymax, std::string stat);
+RcppExport SEXP _ydfun_focal_stat_tw(SEXP xxxSEXP, SEXP yyySEXP, SEXP rescaleSEXP, SEXP xminSEXP, SEXP xmaxSEXP, SEXP yminSEXP, SEXP ymaxSEXP, SEXP statSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::cube >::type x(xSEXP);
-    Rcpp::traits::input_parameter< arma::cube >::type y(ySEXP);
-    Rcpp::traits::input_parameter< bool >::type fuzzy(fuzzySEXP);
+    Rcpp::traits::input_parameter< arma::cube >::type xxx(xxxSEXP);
+    Rcpp::traits::input_parameter< arma::cube >::type yyy(yyySEXP);
+    Rcpp::traits::input_parameter< bool >::type rescale(rescaleSEXP);
     Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
     Rcpp::traits::input_parameter< double >::type xmax(xmaxSEXP);
     Rcpp::traits::input_parameter< double >::type ymin(yminSEXP);
     Rcpp::traits::input_parameter< double >::type ymax(ymaxSEXP);
-    Rcpp::traits::input_parameter< Rcpp::String >::type stat(statSEXP);
-    rcpp_result_gen = Rcpp::wrap(focal_stat_tw(x, y, fuzzy, xmin, xmax, ymin, ymax, stat));
+    Rcpp::traits::input_parameter< std::string >::type stat(statSEXP);
+    rcpp_result_gen = Rcpp::wrap(focal_stat_tw(xxx, yyy, rescale, xmin, xmax, ymin, ymax, stat));
     return rcpp_result_gen;
 END_RCPP
 }

@@ -16,29 +16,29 @@ kernel_gauss <- function(ksize, sigma) {
 #'
 #' @param x A matrix.
 #' @param kernel A kernel which can be produced by [kernel_gauss]
-#' @param global Are data at global scale? If `TRUE`, both vertical
+#' @param globe Are data at globe scale? If `TRUE`, both vertical
 #' borders will be padded.
 #' @return A matrix of focal mean.
 #' @export
-focal_mean <- function(x, kernel, global) {
-    .Call(`_ydfun_focal_mean`, x, kernel, global)
+focal_mean <- function(x, kernel, globe) {
+    .Call(`_ydfun_focal_mean`, x, kernel, globe)
 }
 
 #' Focal statistics on spatial window
 #'
 #' @param x A matrix.
 #' @param y The other matrix.
-#' @param fuzzy Fuzzify or not prior to calculation.
-#' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
+#' @param rescale Rescale or just clamp before computation.
+#' @param xmin,xmax,ymin,ymax Rescale or clamp parameters.
 #' If `NA_real_`, the default, will be set as extrema of data.
 #' @param ksize Side length of the spatial window.
-#' @param global Are data at global scale? If `TRUE`, both vertical
+#' @param globe Are data at the global scale? If `TRUE`, both vertical
 #' borders will be padded.
 #' @param stat Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.
 #' @return A matirx.
 #' @export
-focal_stat_sw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, global = FALSE, stat = "xmn") {
-    .Call(`_ydfun_focal_stat_sw`, x, y, fuzzy, xmin, xmax, ymin, ymax, ksize, global, stat)
+focal_stat_sw <- function(x, y, rescale = FALSE, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, ksize = 9, globe = FALSE, stat = "xmn") {
+    .Call(`_ydfun_focal_stat_sw`, x, y, rescale, xmin, xmax, ymin, ymax, ksize, globe, stat)
 }
 
 #' Focal statistics on temporal window
@@ -48,11 +48,11 @@ focal_stat_sw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = 
 #' @inheritParams focal_stat_sw
 #' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
 #' If `NA_real_`, the default, will be set as extrema of data.
-#' @param x A 3d array. The 3rd one is time.
-#' @param y The other array.
+#' @param xxx A 3d array. The 3rd one is time.
+#' @param yyy The other array.
 #' @return A matrix.
 #' @export
-focal_stat_tw <- function(x, y, fuzzy, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {
-    .Call(`_ydfun_focal_stat_tw`, x, y, fuzzy, xmin, xmax, ymin, ymax, stat)
+focal_stat_tw <- function(xxx, yyy, rescale = FALSE, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {
+    .Call(`_ydfun_focal_stat_tw`, xxx, yyy, rescale, xmin, xmax, ymin, ymax, stat)
 }
 
