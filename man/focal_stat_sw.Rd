@@ -22,15 +22,15 @@ focal_stat_sw(
 
 \item{y}{The other matrix.}
 
-\item{rescale}{Rescale or just clamp before computation.}
+\item{rescale}{Rescale or not before computation.}
 
-\item{xmin, xmax, ymin, ymax}{Rescale or clamp parameters.
-If \code{NA_real_}, the default, will be set as extrema of data.}
+\item{xmin, xmax, ymin, ymax}{Normalization parameters. If \code{NA}, are calculated
+from the ranges of \code{x} and \code{y}, respectively.}
 
-\item{ksize}{Side length of the spatial window.}
+\item{ksize}{Side length of the spatial windows.}
 
-\item{globe}{Are data at the global scale? If \code{TRUE}, both vertical
-borders will be padded.}
+\item{globe}{Are data at the global scale? If \code{TRUE}, two vertical borders
+will be padded before computation.}
 
 \item{stat}{Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.}
 }

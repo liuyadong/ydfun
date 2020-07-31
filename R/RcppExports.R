@@ -28,12 +28,12 @@ focal_mean <- function(x, kernel, globe) {
 #'
 #' @param x A matrix.
 #' @param y The other matrix.
-#' @param rescale Rescale or just clamp before computation.
-#' @param xmin,xmax,ymin,ymax Rescale or clamp parameters.
-#' If `NA_real_`, the default, will be set as extrema of data.
-#' @param ksize Side length of the spatial window.
-#' @param globe Are data at the global scale? If `TRUE`, both vertical
-#' borders will be padded.
+#' @param rescale Rescale or not before computation.
+#' @param xmin,xmax,ymin,ymax Normalization parameters. If `NA`, are calculated
+#'   from the ranges of `x` and `y`, respectively.
+#' @param ksize Side length of the spatial windows.
+#' @param globe Are data at the global scale? If `TRUE`, two vertical borders
+#'   will be padded before computation.
 #' @param stat Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.
 #' @return A matirx.
 #' @export
@@ -46,10 +46,10 @@ focal_stat_sw <- function(x, y, rescale = FALSE, xmin = NA_real_, xmax = NA_real
 #' This function computes the GCSM at each cell treating the 3rd dimension
 #' as a temporal window.
 #' @inheritParams focal_stat_sw
-#' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
-#' If `NA_real_`, the default, will be set as extrema of data.
-#' @param xxx A 3d array. The 3rd one is time.
-#' @param yyy The other array.
+#' @param xmin,xmax,ymin,ymax Normalization parameters. If `NA`, are calculated
+#'   from the ranges of `xxx` and `yyy`, respectively.
+#' @param xxx A 3-d array with the 3rd dimension representing time.
+#' @param yyy The other 3-d array.
 #' @return A matrix.
 #' @export
 focal_stat_tw <- function(xxx, yyy, rescale = FALSE, xmin = NA_real_, xmax = NA_real_, ymin = NA_real_, ymax = NA_real_, stat = "xmn") {

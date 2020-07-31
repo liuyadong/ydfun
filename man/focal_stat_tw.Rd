@@ -16,14 +16,14 @@ focal_stat_tw(
 )
 }
 \arguments{
-\item{xxx}{A 3d array. The 3rd one is time.}
+\item{xxx}{A 3-d array with the 3rd dimension representing time.}
 
-\item{yyy}{The other array.}
+\item{yyy}{The other 3-d array.}
 
-\item{rescale}{Rescale or just clamp before computation.}
+\item{rescale}{Rescale or not before computation.}
 
-\item{xmin, xmax, ymin, ymax}{Parameters that determine fuzzy sets.
-If \code{NA_real_}, the default, will be set as extrema of data.}
+\item{xmin, xmax, ymin, ymax}{Normalization parameters. If \code{NA}, are calculated
+from the ranges of \code{xxx} and \code{yyy}, respectively.}
 
 \item{stat}{Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.}
 }

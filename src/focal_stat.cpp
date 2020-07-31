@@ -1,19 +1,16 @@
 #include <RcppArmadillo.h>
 using namespace arma;
 
-// [[Rcpp::depends(RcppArmadillo)]]
-//// [[Rcpp::plugins(openmp)]]
-
 //' Focal statistics on spatial window
 //'
 //' @param x A matrix.
 //' @param y The other matrix.
-//' @param rescale Rescale or just clamp before computation.
-//' @param xmin,xmax,ymin,ymax Rescale or clamp parameters.
-//' If `NA_real_`, the default, will be set as extrema of data.
-//' @param ksize Side length of the spatial window.
-//' @param globe Are data at the global scale? If `TRUE`, both vertical
-//' borders will be padded.
+//' @param rescale Rescale or not before computation.
+//' @param xmin,xmax,ymin,ymax Normalization parameters. If `NA`, are calculated
+//'   from the ranges of `x` and `y`, respectively.
+//' @param ksize Side length of the spatial windows.
+//' @param globe Are data at the global scale? If `TRUE`, two vertical borders
+//'   will be padded before computation.
 //' @param stat Statistic to return. One of 'xmn', 'ymn', 'xsd', or 'ysd'.
 //' @return A matirx.
 //' @export
@@ -36,9 +33,8 @@ arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool rescale = false,
   if (ymin > ymax) Rcpp::stop("ymin > ymax, please reset them!");
   if (xmax < x.min() || xmin > x.max()) Rcpp::stop("[xmin, xmax] is beyond the range of x!");
   if (ymax < y.min() || ymin > y.max()) Rcpp::stop("[ymin, ymax] is beyond the range of x!");
-
-  x = clamp(x, xmin, xmax);
-  y = clamp(y, ymin, ymax);
+  // x = clamp(x, xmin, xmax);
+  // y = clamp(y, ymin, ymax);
   if (rescale) {
     // avoid zero-denominator
     if (xmin == xmax) x.elem(find_finite(x)).ones(); else x = (x-xmin) / (xmax-xmin);
@@ -105,10 +101,10 @@ arma::mat focal_stat_sw(arma::mat x, arma::mat y, bool rescale = false,
 //' This function computes the GCSM at each cell treating the 3rd dimension
 //' as a temporal window.
 //' @inheritParams focal_stat_sw
-//' @param xmin,xmax,ymin,ymax Parameters that determine fuzzy sets.
-//' If `NA_real_`, the default, will be set as extrema of data.
-//' @param xxx A 3d array. The 3rd one is time.
-//' @param yyy The other array.
+//' @param xmin,xmax,ymin,ymax Normalization parameters. If `NA`, are calculated
+//'   from the ranges of `xxx` and `yyy`, respectively.
+//' @param xxx A 3-d array with the 3rd dimension representing time.
+//' @param yyy The other 3-d array.
 //' @return A matrix.
 //' @export
 // [[Rcpp::export]]
@@ -134,8 +130,8 @@ arma::mat focal_stat_tw(arma::cube xxx, arma::cube yyy, bool rescale = false,
   if (ymin > ymax) Rcpp::stop("ymin > ymax, please reset them!");
   if (xmax < x.min() || xmin > x.max()) Rcpp::stop("[xmin, xmax] is beyond the range of x!");
   if (ymax < y.min() || ymin > y.max()) Rcpp::stop("[ymin, ymax] is beyond the range of x!");
-  x = clamp(x, xmin, xmax);
-  y = clamp(y, ymin, ymax);
+  // x = clamp(x, xmin, xmax);
+  // y = clamp(y, ymin, ymax);
   if (rescale) {
     // avoid zero-denominator
     if (xmin == xmax) x.elem(find_finite(x)).ones(); else x = (x-xmin) / (xmax-xmin);

@@ -1,9 +1,6 @@
 #include <RcppArmadillo.h>
 using namespace arma;
 
-// [[Rcpp::depends(RcppArmadillo)]]
-//// [[Rcpp::plugins(openmp)]]
-
 //' Gaussian kernel
 //'
 //' @param ksize Side length of the squared kernel.
