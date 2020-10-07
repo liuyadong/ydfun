@@ -30,6 +30,6 @@ set_attr(x, attr, ar_wide)
 library(stars)
 x <- matrix(1:18, nrow=6)
 st <- x \%>\% st_as_stars() \%>\% setNames('v')
-st \%>\% image(text_values = TRUE)
+st \%>\% image(text_values = TRUE, useRaster = FALSE)
 st \%>\% get_attr('v')
 }
