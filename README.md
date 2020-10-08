@@ -1,14 +1,19 @@
 
-# ydfun
+ydfun
+=====
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/liuyadong/ydfun/workflows/R-CMD-check/badge.svg)](https://github.com/liuyadong/ydfun/actions)
+<!-- badges: end -->
 
 This package contains several miscellaneous functions I used in my
 study.
 
-## Installation
+Installation
+------------
 
 You can install the package from github with:
 
-``` r
-##install.package('remotes')
-remotes::install_github("liuyadong/ydfun")
-```
+    ##install.package('remotes')
+    remotes::install_github("liuyadong/ydfun")

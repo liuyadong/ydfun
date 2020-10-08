@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 
 # ydfun
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/liuyadong/ydfun/workflows/R-CMD-check/badge.svg)](https://github.com/liuyadong/ydfun/actions)
+<!-- badges: end -->
+
 This package contains several miscellaneous functions I used in my study.
 
 ## Installation
